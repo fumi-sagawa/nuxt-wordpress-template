@@ -16,10 +16,12 @@ export default {
 .paging {
   padding: 100px 0;
   display: grid;
+  
   justify-content: center;
   &-list{
     display: grid;
     grid-auto-flow: column;
+    column-gap: 20px;
   }
 }
 a {

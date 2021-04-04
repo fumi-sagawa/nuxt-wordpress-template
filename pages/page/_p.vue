@@ -9,7 +9,7 @@ div
 <script>
 import axios from 'axios'
 export default {
-  async asyncData({params}){
+  async asyncData({params, $config}){
     const page = params.p|| "1"
     console.log(params.p)
     console.log(page)
@@ -17,7 +17,7 @@ export default {
     const {data} = await axios.get(
       `https://fureta.microcms.io/api/v1/blogtest?limit=${limit}&offset=${(page-1)* limit}`,
     {
-      headers:{ 'X-API-KEY': 'e89c978d-e3b8-4d51-87bc-0bf4b562cb53'}
+      headers:{ 'X-API-KEY': $config.apiKey}
     }
     )
     return data

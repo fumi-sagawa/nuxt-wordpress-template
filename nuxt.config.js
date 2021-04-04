@@ -1,7 +1,12 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  privateRuntimeConfig: {
+    apiKey: process.env.API_KEY
+  },
+  publicRuntimeConfig: {
+    apiKey: process.env.NODE_ENV !== 'production' ? process.env.API_KEY : undefined
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'NuxtMicroCMS20210401',
