@@ -1,14 +1,9 @@
-<template>
-<div>
-  <ul>
-    <li v-for="content in contents" :key="content.id">
-      <nuxt-link :to="`/${content.id}`">{{content.title}}</nuxt-link>
-    </li>
-  </ul>
-  <nuxt-link to="/">home</nuxt-link>
-  <nuxt-link to="/page/1">page1</nuxt-link>
-  <nuxt-link to="/page/2">page2</nuxt-link>
-</div>
+<template lang="pug">
+div
+  ul
+    li(v-for="content in contents" :key="content.id")
+      nuxt-link(:to="`/${content.id}`") {{content.title}}
+  Paging
 </template>
 
 <script>
