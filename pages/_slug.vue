@@ -7,16 +7,17 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
-  async asyncData({params, $config}){
-    const {data} = await axios.get(
+  async asyncData({ params, $config }) {
+    const { data } = await axios.get(
       `https://fureta.microcms.io/api/v1/blogtest/${params.slug}`,
-    {
-      headers:{ 'X-API-KEY': $config.apiKey}
-    }
-    )
-    return data
+      {
+        headers: { "X-API-KEY": $config.apiKey }
+      }
+    );
+    console.log(data);
+    return data;
   }
-}
+};
 </script>
