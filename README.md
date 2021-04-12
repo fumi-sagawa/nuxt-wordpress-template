@@ -18,3 +18,7 @@ $ npm run generate
 ```
 
 For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+
+
+## 概要
+NuxtとMicroCMSを使用した実行環境テスト用リポジトリ

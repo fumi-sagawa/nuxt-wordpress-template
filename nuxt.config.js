@@ -9,7 +9,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'NuxtMicroCMS20210401',
+    title: 'NuxtWordpress20210401',
     htmlAttrs: {
       lang: 'en'
     },
