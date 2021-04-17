@@ -3,6 +3,7 @@ div
   ul
     li(v-for="post in posts" :key="post.id")
       nuxt-link(:to="`/${post.slug}`") {{post.title}}
+  div(class="post" v-html="$store.state.posts[12].content")
   Paging
 </template>
 

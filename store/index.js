@@ -16,9 +16,9 @@ export const mutations = {
   }
 };
 
-export const actions = {
-  async getPosts({ commit }, url) {
-    const { data } = await axios.get(url);
-    commit("setPosts", data);
-  }
-};
+// export const actions = {
+//   async getPosts({ commit }, url) {
+//     const { data } = await axios.get(url);
+//     commit("setPosts", data);
+//   }
+// };
