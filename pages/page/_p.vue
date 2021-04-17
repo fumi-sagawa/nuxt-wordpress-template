@@ -1,29 +1,29 @@
 <template lang="pug">
 div
   ul
-    li(v-for="content in contents" :key="content.id")
-      nuxt-link(:to="`/${content.id}`") {{content.title}}
+    li(v-for="post in posts" :key="post.id")
+      nuxt-link(:to="`/${post.slug}`") {{post.title}}
   Paging
 </template>
 
 <script>
-import axios from 'axios'
+import axios from "axios";
 export default {
-  async asyncData({params, $config}){
-    const page = params.p|| "1"
-    const limit = 10
-    const {data} = await axios.get(
-      `https://fureta.microcms.io/api/v1/blogtest?limit=${limit}&offset=${(page-1)* limit}`,
-    {
-      headers:{ 'X-API-KEY': $config.apiKey}
-    }
-    )
-    return data
+  async asyncData({ params, $config }) {
+    // const page = params.p|| "1"
+
+    const { data } = await axios.get($config.baseUrl);
+    //コンテンツ一覧用
+    const limit = 10;
+    const pagenationNum = params.p;
+    const contentsEnd = pagenationNum * limit;
+    const contentsStt = contentsEnd - limit;
+    const dataSliced = data.slice(contentsStt, contentsEnd);
+    return { posts: dataSliced };
   }
-}
+};
 
 // console.log(data)
 </script>
 
-<style>
-</style>
+<style></style>

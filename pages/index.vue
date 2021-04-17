@@ -3,31 +3,33 @@ div
   .top
     div.top__text welcome to hogehoge HOMEPAGE!!
     div
-      //- p {{posts[0].excerpt}}
-    div(class="post" v-html="posts")
+    div(class="post" v-html="posts[12].content")
+    div(class="post" v-html="$store.state.posts[12].content")
   Paging
 </template>
 
 <script>
 import axios from "axios";
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
       posts: []
     };
   },
-  async asyncData({}) {
-    const { data } = await axios.get(
-      `http://www.furetawp.com/wp-json/wp/v2/posts`,
-      {
-        // headers:{ 'X-API-KEY': $config.apiKey}
-      }
-    );
-    // console.log(data[0].content.rendered);
-    return { posts: data[0].content.rendered };
+  async asyncData({ $config }) {
+    const { data } = await axios.get($config.baseUrl);
+    return { posts: data };
   },
   mounted() {
-    console.log(this.posts);
+    this.getPosts(this.$config.baseUrl);
+    // console.log(this.posts);
+  },
+  methods: {
+    ...mapActions({
+      getPosts: "getPosts"
+    })
   }
 };
 </script>
