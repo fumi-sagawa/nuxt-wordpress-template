@@ -4,7 +4,6 @@ div
     div.top__text welcome to hogehoge HOMEPAGE!!
     div
     //- div(class="post" v-html="posts[12].content")
-    div(class="post" v-html="$store.state.posts[12].content")
   Paging
 </template>
 

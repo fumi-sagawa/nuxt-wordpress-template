@@ -7,12 +7,14 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   data() {
     return {};
   },
-  async asyncData({ params, store }) {
-    const pageContent = store.state.posts.find(v => {
+  async asyncData({ params, $config }) {
+    const { data } = await axios.get($config.baseUrl);
+    const pageContent = data.find(v => {
       return v.slug === params.slug;
     });
     return pageContent;
