@@ -7,20 +7,14 @@
 </template>
 
 <script>
-import axios from "axios";
 export default {
   data() {
     return {};
   },
-  async asyncData({ params, $config }) {
-    const { data } = await axios.get($config.baseUrl, {
-      // headers: { "X-API-KEY": $config.apiKey }
+  async asyncData({ params, store }) {
+    const pageContent = store.state.posts.find(v => {
+      return v.slug === params.slug;
     });
-    //dataの中からURLに相当するもの(slug)を抽出
-    const pageContent = data.find(singlePage => {
-      return singlePage.slug === params.slug;
-    });
-    console.log($config.baseUrl);
     return pageContent;
   }
 };
