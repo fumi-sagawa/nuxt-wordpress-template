@@ -4,29 +4,27 @@
     nuxt-link(to="/") home
     nuxt-link(to="/page/1") page1
     nuxt-link(to="/page/2") page2
-    //- p {{paging}}
+    p {{paging}}
     //- ul
     //-   li(v-for="post in posts" :key="post.id")
     //-     nuxt-link(:to="`/${post.slug}`") {{post.title}}
 </template>
 
 <script>
-// import axios from "axios";
-// export default {
-//   data() {
-//     return {
-//       paging: []
-//     };
-//   },
-//   async asyncData({ params, $config }) {
-//     const { data } = await axios.get($config.baseUrl);
-//     console.log(data);
-//     return { paging: data };
-//   },
-//   mounted() {
-//     console.log(this.paging);
-//   }
-// };
+import axios from "axios";
+export default {
+  data() {
+    return {
+      paging: []
+    };
+  },
+  mounted() {
+    const { data } = await axios.get($config.baseUrl);
+    console.log(data);
+    console.log(this.paging);
+    return {paging:data}
+  }
+};
 </script>
 
 <style lang="scss" scoped>
