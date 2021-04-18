@@ -4,15 +4,13 @@ div
     li(v-for="post in posts" :key="post.id")
       nuxt-link(:to="`/${post.slug}`") {{post.title}}
   //- div(class="post" v-html="$store.state.posts[12].content")
-  Paging
+  Pager
 </template>
 
 <script>
 import axios from "axios";
 export default {
   async asyncData({ params, $config }) {
-    // const page = params.p|| "1"
-
     const { data } = await axios.get($config.baseUrl);
     //コンテンツ一覧用
     const limit = 10;

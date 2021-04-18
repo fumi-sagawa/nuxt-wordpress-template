@@ -3,13 +3,16 @@ export default {
   target: "static",
   privateRuntimeConfig: {
     apiKey: process.env.API_KEY,
-    baseUrl: process.env.BASE_URL
+    baseUrl: process.env.BASE_URL,
+    postUrl: process.env.FORM_URL
   },
   publicRuntimeConfig: {
     apiKey:
       process.env.NODE_ENV !== "production" ? process.env.API_KEY : undefined,
     baseUrl:
-      process.env.NODE_ENV !== "production" ? process.env.BASE_URL : undefined
+      process.env.NODE_ENV !== "production" ? process.env.BASE_URL : undefined,
+    postUrl:
+      process.env.NODE_ENV !== "production" ? process.env.FORM_URL : undefined
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {

@@ -3,8 +3,8 @@ div
   .top
     div.top__text welcome to hogehoge HOMEPAGE!!
     div
-    //- div(class="post" v-html="posts[12].content")
-  Paging
+  Pager
+  Form
 </template>
 
 <script></script>
