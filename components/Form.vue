@@ -33,7 +33,6 @@
         v-model="formData.message"
         class="form-control" 
         name="message" 
-        rows="8" 
       )
 
     button(@click="submit") 送信！

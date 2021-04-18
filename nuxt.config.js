@@ -11,8 +11,7 @@ export default {
       process.env.NODE_ENV !== "production" ? process.env.API_KEY : undefined,
     baseUrl:
       process.env.NODE_ENV !== "production" ? process.env.BASE_URL : undefined,
-    postUrl:
-      process.env.NODE_ENV !== "production" ? process.env.FORM_URL : undefined
+    postUrl: process.env.FORM_URL
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
