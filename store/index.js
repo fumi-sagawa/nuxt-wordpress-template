@@ -16,9 +16,15 @@ export const mutations = {
   }
 };
 
-export const actions = {
-  async getPosts({ commit }, url) {
-    const { data } = await axios.get(url);
-    commit("setPosts", data);
-  }
-};
+// export const getters = {
+//   getPost(state) {
+//     state.singlePost = posts;
+//   }
+// };
+
+// export const actions = {
+//   async getPosts({ commit }, url) {
+//     const { data } = await axios.get(url);
+//     commit("setPosts", data);
+//   }
+// };
