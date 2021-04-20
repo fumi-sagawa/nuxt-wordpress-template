@@ -54,7 +54,7 @@ export default {
   },
   methods: {
     submit() {
-      const formData = this.convertJsontoUrlencoded(this.formData);
+      const formData = this.convertJson2Urlencoded(this.formData);
       // Base64に変換
       const axiosConfig = {
         headers: {
@@ -71,7 +71,7 @@ export default {
           console.log(error);
         });
     },
-    convertJsontoUrlencoded(obj) {
+    convertJson2Urlencoded(obj) {
       let str = [];
       for (let key in obj) {
         if (obj.hasOwnProperty(key)) {

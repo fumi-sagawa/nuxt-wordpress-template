@@ -5,6 +5,7 @@ div
     div
   Pager
   Form
+  FormCopy(class="maringTop")
 </template>
 
 <script></script>
@@ -16,5 +17,8 @@ div
   align-items: center;
   justify-content: center;
   padding: 100px 0;
+}
+.maringTop {
+  margin-top: 50px;
 }
 </style>
