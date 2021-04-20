@@ -2,10 +2,12 @@
 div
   .top
     div.top__text welcome to hogehoge HOMEPAGE!!
+    img(src="images/ocean-3605547.jpg")
+    nuxt-img(src="images/ocean-3605547.jpg" format="webp" quality="50")
     div
   Pager
-  Form
-  FormCopy(class="maringTop")
+  .formWrapper
+    ContactForm
 </template>
 
 <script></script>
@@ -18,7 +20,15 @@ div
   justify-content: center;
   padding: 100px 0;
 }
-.maringTop {
-  margin-top: 50px;
+.formWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+img,
+nuxt-img {
+  width: 100%;
+  height: auto;
 }
 </style>
