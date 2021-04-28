@@ -2,7 +2,7 @@
 div
   .top
     div.top__text welcome to hogehoge HOMEPAGE!!
-    img(src="images/ocean-3605547.jpg")
+    //- img(src="images/ocean-3605547.jpg")
     nuxt-img(provider="static" src="images/ocean-3605547.jpg" format="webp" quality="50")
     div
   Pager
