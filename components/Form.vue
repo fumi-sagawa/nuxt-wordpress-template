@@ -40,6 +40,7 @@
 </template>
 
 <script>
+// https://tabinou.com/archives/2473
 import axios from "axios";
 export default {
   data() {
